@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katbghini?</title>
+
+<style>
+body {
+    background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    overflow: hidden;
+}
+
+img {
+    width: 180px;
+    margin-top: 40px;
+}
+
+h2 {
+    color: #ff4d88;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s ease, background 0.2s;
+}
+
+#yes {
+    background: #ff4d88;
+    color: white;
+}
+
+#no {
+    background: #eee;
+}
+
+#message {
+    font-size: 24px;
+    color: #ff4d88;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://cdn-icons-png.flaticon.com/512/3468/3468371.png">
+
+<h2>Katbghini? 🥺</h2>
+
+<button id="yes">AH 💖</button>
+<button id="no">LA 😢</button>
+
+<div id="message"></div>
+
+<audio id="sound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
+
+<script>
+let yes = document.getElementById("yes");
+let no = document.getElementById("no");
+let msg = document.getElementById("message");
+let sound = document.getElementById("sound");
+
+let scaleYes = 1;
+let scaleNo = 1;
+
+yes.onclick = () => {
+    msg.innerHTML = "Ana ta ana kanbghik ❤️😍";
+    sound.play();
+};
+
+// الحركة الأساسية (exact feeling)
+no.addEventListener("mouseenter", () => {
+
+    // yes تكبر بسرعة أكثر شوية
+    scaleYes += 0.25;
+    yes.style.transform = "scale(" + scaleYes + ")";
+
+    // no تصغار
+    scaleNo -= 0.08;
+    if(scaleNo < 0.15) scaleNo = 0.15;
+    no.style.transform = "scale(" + scaleNo + ")";
+
+});
+</script>
+
+</body>
+</html>
